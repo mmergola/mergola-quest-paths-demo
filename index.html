@@ -757,7 +757,8 @@ function renderPanel(moveFocus) {
       <button type="button" class="link" data-act="finish">Fill in the rest for me</button>
       <button type="button" class="link" data-act="restart">Pick a different quest</button>
     </div>
-    <p class="progress label">${c.done} of ${c.total} keys done</p></div>`;
+    <p class="progress label">${c.done} of ${c.total} keys done</p>
+    ${aboutBlock()}</div>`;
   if (moveFocus) {
     const first = p.querySelector(".opt:not(:disabled)");
     if (first && window.matchMedia("(min-width: 821px)").matches) first.focus({ preventScroll: true });
