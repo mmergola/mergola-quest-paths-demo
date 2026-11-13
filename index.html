@@ -243,7 +243,7 @@ header.intro .demo-note {
 @media (max-width: 820px) {
   .steps { grid-template-columns: 1fr; gap: 10px; margin-bottom: 24px; }
   .stage { grid-template-columns: 1fr; gap: 24px; }
-  .stage > .panel { order: 0; }
+  .about.desktop-only { display: none; }
   .panel { position: static; }
 }
 @media (max-width: 520px) {
@@ -673,8 +673,8 @@ function renderMap() {
   $("map").innerHTML = html;
 }
 
-function aboutBlock() {
-  return `<div class="about">
+function aboutBlock(extra = "") {
+  return `<div class="about${extra}">
     <p>I wanted a way to have those parallel thoughts systemized so that I never left an option behind. In doing so, it also builds a robust backlog I can pluck other quest ideas and paths from.</p>
     <p>That was the genesis of Quest Paths. It gives the designer both constraints and freedom, so we can keep delivering on the promise of multiple paths.</p>
     <p class="hire">I see what my game project needs and build it. I'm looking for my next major project as a Senior Game Designer.</p>
@@ -758,7 +758,7 @@ function renderPanel(moveFocus) {
       <button type="button" class="link" data-act="restart">Pick a different quest</button>
     </div>
     <p class="progress label">${c.done} of ${c.total} keys done</p>
-    ${aboutBlock()}</div>`;
+    ${aboutBlock(" desktop-only")}</div>`;
   if (moveFocus) {
     const first = p.querySelector(".opt:not(:disabled)");
     if (first && window.matchMedia("(min-width: 821px)").matches) first.focus({ preventScroll: true });
