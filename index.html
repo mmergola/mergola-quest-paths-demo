@@ -79,7 +79,8 @@ header.intro .demo-note {
 .steps li.complete .num::before { content: "\2713"; font-family: system-ui, sans-serif; font-size: 13px; }
 .steps li.complete .num-text { display: none; }
 
-.stage { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 40px; align-items: start; }
+.stage { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 40px; align-items: start; }
+.stage > .panel { order: -1; }
 
 /* ---------- rules toggle ---------- */
 .rules { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-bottom: 18px; }
@@ -242,6 +243,7 @@ header.intro .demo-note {
 @media (max-width: 820px) {
   .steps { grid-template-columns: 1fr; gap: 10px; margin-bottom: 24px; }
   .stage { grid-template-columns: 1fr; gap: 24px; }
+  .stage > .panel { order: 0; }
   .panel { position: static; }
 }
 @media (max-width: 520px) {
